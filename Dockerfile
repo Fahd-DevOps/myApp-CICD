@@ -5,7 +5,7 @@ FROM nginx:latest
 WORKDIR /usr/share/nginx/html
 
 # Copy all myApp files to the container
-COPY index.html clean-blog.css clean-blog.min.css udagram.jpg .
+COPY index.html .
 
 # Expose a port for myApp
 EXPOSE 80
