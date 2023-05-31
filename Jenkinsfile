@@ -11,7 +11,7 @@ pipeline {
                     sh """ 
                     docker build . -t app01
                     docker login -u ${DOCKERENAME} -p ${DOCKERPASS}
-                    docker push fkdevops/kubernetes-images
+                    docker push fkdevops/kubernetes-images:v1
                     """
                 }
             }
