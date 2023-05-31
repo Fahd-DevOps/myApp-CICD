@@ -9,9 +9,10 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'DOCKERPASS', usernameVariable: 'DOCKERENAME')]) {
                     sh """ 
-                    docker build . -t app01:latest
+                    docker build . -t app02:latest
                     docker login -u ${DOCKERENAME} -p ${DOCKERPASS}
-                    docker push fkdevops/kubernetes-images:v1
+                    docker tag app02:latest fkdevops/kubernetes-images
+                    docker push fkdevops/kubernetes-images
                     """
                 }
             }
