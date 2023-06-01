@@ -5,10 +5,7 @@ FROM nginx:latest
 WORKDIR /usr/share/nginx/html
 
 # Copy all myApp files to the container
-COPY index.html .
-COPY css/ .
-COPY img/ .
-COPY vendor/ .
+COPY app-v2/ .
 
 # Expose a port for myApp
 EXPOSE 80
